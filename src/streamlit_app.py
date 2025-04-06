@@ -17,18 +17,22 @@ if "logged_in" not in st.session_state:
 # LOGIN/REGISTRATION
 if not st.session_state.logged_in:
     # Login form
-    st.title("Sales Dashboard Login")
-    with st.form("login_form"):
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
-        login_button = st.form_submit_button("Login")
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        st.title("Sales Dashboard Login")
+        with st.form("login_form"):
+            username = st.text_input("Username")
+            password = st.text_input("Password", type="password")
+            login_button = st.form_submit_button("Login")
 
     # Registration form
-    st.write("### Create New Account")
-    with st.form("registration_form"):
-        new_username = st.text_input("New Username")
-        new_password = st.text_input("New Password", type="password")
-        register_button = st.form_submit_button("Register")
+    col4, col5, col6 = st.columns([1, 1, 1])
+    with col5:
+        st.write("### Create New Account")
+        with st.form("registration_form"):
+            new_username = st.text_input("New Username")
+            new_password = st.text_input("New Password", type="password")
+            register_button = st.form_submit_button("Register")
 
     # Login button logic
     if login_button:
